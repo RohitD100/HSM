@@ -1,35 +1,24 @@
-import React from 'react';
-import {SafeAreaView, ScrollView, StatusBar} from 'react-native';
-import {useColorScheme, View} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {styles} from './styles';
+import * as React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {HomeScreen} from './screen/HomeScreen/HomeScreen';
+import {DetailsScreen} from './screen/DetailsScreen/DetailsScreen';
+import {RootStackParamList} from './types';
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+function App() {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={[backgroundStyle]}>
-        <View
-          style={[
-            styles.box,
-            {
-              backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            },
-          ]}
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{title: 'Home'}}
         />
-      </ScrollView>
-    </SafeAreaView>
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

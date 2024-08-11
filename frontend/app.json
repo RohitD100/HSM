@@ -1,34 +1,4 @@
 {
-  "expo": {
-    "name": "HSM",
-    "slug": "HSM",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/hospital-icon-7294.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/images/hospital-icon-7294.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/hospital-icon-7294.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/hospital-icon-7294.png"
-    },
-    "plugins": ["expo-router"],
-    "experiments": {
-      "typedRoutes": true
-    }
-  }
+  "name": "frontend",
+  "displayName": "frontend"
 }
